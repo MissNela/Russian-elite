@@ -18,7 +18,7 @@ async def ping():
 	await bot.say('Dont try it.. You dont have any chance. Heheh')
 	
 	
-@client.command(pass_context = True)
+@bot.command(pass_context = True)
 async def play(ctx, *, url):
     author = ctx.message.author
     voice_channel = author.voice_channel
@@ -49,27 +49,27 @@ async def stop(ctx):
 
     return await client.say("I am not playing anyting???!")
 
-@client.command(pass_context=True)
+@bot.command(pass_context=True)
 @commands.has_permissions(kick_members=True)
 async def joinvoice(ctx):
     author = ctx.message.author
     channel = author.voice_channel
     await client.join_voice_channel(channel)
 
-@client.command(pass_context = True)
+@bot.command(pass_context = True)
 @commands.has_permissions(kick_members=True)
 async def warn(ctx, userName: discord.User, *, message:str): 
     await client.send_message(userName, "You have been warned for: **{}**".format(message))
     await client.say(":warning: __**{0} Has Been Warned!**__ :warning: ** Reason:{1}** ".format(userName,message))
     pass
 
-@client.command(pass_context = True)
+@bot.command(pass_context = True)
 @commands.has_permissions(manage_nicknames=True)     
 async def setnick(ctx, user: discord.Member, *, nickname):
     await client.change_nickname(user, nickname)
     await client.delete_message(ctx.message)
 
-@client.command(pass_context=True)
+@bot.command(pass_context=True)
 async def poll(ctx, question, *options: str):
         if len(options) <= 1:
             await client.say('You need more than one option to make a poll!')
