@@ -20,4 +20,4 @@ async def ping():
 	await bot.say('Dont try it.. You dont have any chance. Heheh')
   
 bot.run(os.getnv('TOKEN'))
-runrun(os.getnv('TOKEN'))
+
