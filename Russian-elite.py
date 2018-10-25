@@ -41,7 +41,7 @@ async def play(ctx, *, url):
                 player2.start()
 
 
-@client.command(pass_context = True)
+@cbot.ommand(pass_context = True)
 async def stop(ctx):
     for x in client.voice_clients:
         if(x.server == ctx.message.server):
