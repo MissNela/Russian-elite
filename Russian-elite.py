@@ -94,4 +94,4 @@ async def poll(ctx, question, *options: str):
         embed.set_footer(text='Poll ID: {}'.format(react_message.id))
         await client.edit_message(react_message, embed=embed)
 
-bot.login(process.env.token):
+bot.login(process.env.token);
