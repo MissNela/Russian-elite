@@ -19,5 +19,5 @@ async def ping():
 	await bot.say(':ping_pong: Why are you trying to ping me??')
 	await bot.say('Dont try it.. You dont have any chance. Heheh')
   
-bot.run(os.getnv('TOKEN'))
+bot.run('TOKEN')
 
