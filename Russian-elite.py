@@ -40,13 +40,8 @@ async def on_member_join(member):
     await client.add_roles(member, role)
 
 
-@client.event
-async def on_message(message):
-    
-    await client.process_commands(message)
-    if message.content.startswith('sup dude'):
-        userID = message.author.id
-        await client.send_message(message.channel, '<@%s> sup' % (userID))
+        await client.send_message(message.channel, '<@%s> :ping_pong: **__Pong!__**' % (userID))
+
 
 @client.command(pass_context =True)
 async def help(ctx):
@@ -68,7 +63,10 @@ async def help(ctx):
 async def questions():
     embed = discord.Embed(
         title = 'Questions Format:',
-        description = 'Username:   Question:    Question Meant For:',
+        description = """Username:  
+        Question:    
+        Question Meant For:',
+        """
 
 
         colour = discord.Colour.green()
@@ -85,7 +83,7 @@ async def clear(ctx, amount = 10):
     async for message in client.logs_from(channel, limit=int(amount)):
         messages.append(message)
     await client.delete_messages(messages)
-    await client.say(' messages were deleted')
+    await client.say('Messages deleted.')
 
 
 @client.command(pass_context = True)
@@ -165,6 +163,15 @@ async def on_message(message):
     if message.content.startswith('Ping'):
         userID = message.author.id
         await client.send_message(message.channel, '<@%s> :ping_pong: **__Pong!__**' % (userID))
+        
+@client.event
+async def sup dude():
+    embed = discord.Embed(
+    title = ''
+    description = "Sup bro."
+    colour = discord.Colour.purple
+    )
+    await client.say(embed=embed)
         
 @client.command()
 async def gamer():
