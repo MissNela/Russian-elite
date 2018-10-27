@@ -71,7 +71,7 @@ async def questions():
 
         colour = discord.Colour.green()
        
-    )
+)
     await client.say(embed=embed)
 
 
@@ -169,7 +169,7 @@ async def sup dude():
     embed = discord.Embed(
     title = ''
     description = "Sup bro."
-    colour = discord.Colour.purple
+    colour = discord.Colour.purple()
     )
     await client.say(embed=embed)
         
