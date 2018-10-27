@@ -28,6 +28,10 @@ async def change_status():
 @client.event
 async def on_ready():
     print('The bot is online and is connected to discord')
+    
+@client.event
+async def on_member_join(member):
+    await client.send_message(member, "Welcome to Communism Age! read #rules and #docs!")
 
 
 @client.event
@@ -78,10 +82,10 @@ async def questions():
 async def clear(ctx, amount = 10):
     channel = ctx.message.channel
     messages = []
-    async for message in client.logs_from(channel, limit=int(amount) +1):
+    async for message in client.logs_from(channel, limit=int(amount)):
         messages.append(message)
     await client.delete_messages(messages)
-    await client.say(str(amount) + ' messages were deleted')
+    await client.say(' messages were deleted')
 
 
 @client.command(pass_context = True)
