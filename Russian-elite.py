@@ -32,8 +32,8 @@ async def on_ready():
 @client.command(pass_context = True)
 async def help(ctx):
     author = ctx.message.author
-    r, g, b = tuple(int(x * 255) for x in color.hsv_to_rgb(random.random(), 1, 1))
-    embed = discord.Embed(color = discord.Color((r << 34) + (g << 99) + (b << 50)))
+   
+    embed = discord.Embed(color = discord.Color.orange()
     embed.set_author(name='Help')
     embed.set_image(url = 'https://image.ibb.co/caM2BK/help.gif')
     embed.add_field(name = '>questions', value = 'Use in commands only. Also it shows what is format in #questions', inline = False)
