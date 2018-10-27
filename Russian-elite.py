@@ -32,7 +32,7 @@ async def on_ready():
 
 @client.event
 async def on_member_join(member):
-    role = discord.utils.get(member.server.roles, name='Newcomer')
+    role = discord.utils.get(member.server.roles, name='USA immigrent')
     await client.add_roles(member, role)
 
 
@@ -47,7 +47,7 @@ async def on_message(message):
 @client.command(pass_context =True)
 async def help(ctx):
     author = ctx.message.author
-    embed = discord.Embed(Colour = discord.Colour.orange())
+    embed = discord.Embed(Colour = discord.Colou.green())
     embed.set_author(name = 'Help Commands')
     embed.add_field(name ='>síay', value ='Returns what the user says.', inline=False)
     embed.add_field(name ='>clear', value ='Deletes certain amount of messages, default amount is 10', inline=False)
@@ -139,6 +139,14 @@ async def serverinfo(ctx, user: discord.Member):
     embed.add_field(name="Joined", value=user.joined_at)
     embed.set_thumbnail(url=user.avatar_url)
     await client.say(embed=embed)
+    
+@client.event
+async def on_message(message):
+    
+    await client.process_commands(message)
+    if message.content.startswith('Ping'):
+        userID = message.author.id
+        await client.send_message(message.channel, '<@%s> :ping_pong: **__Pong!__**' % (userID))
 
 
 client.loop.create_task(change_status())
