@@ -45,7 +45,7 @@ async def on_member_join(member):
 
 @client.command(pass_context =True)
 async def help(ctx):
-    embed = disc
+
 
     author = ctx.message.author
         
