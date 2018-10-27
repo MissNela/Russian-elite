@@ -61,10 +61,12 @@ async def help(ctx):
     await client.send_message(author, embed=embed)
     
 @client.command()
-async def test():
+async def questions():
     embed = discord.Embed(
-        title = 'Test',
-        description = 'This is test Embed',
+        title = 'Questions Format:',
+        description = 'Username:',
+        description = 'Question:',
+        description = 'Question Meant For:',
         colour = discord.Colour.green()
        
     )
