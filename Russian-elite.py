@@ -40,7 +40,7 @@ async def on_member_join(member):
 async def on_message(message):
     
     await client.process_commands(message)
-    if message.content.startswith('Sup dude'):
+    if message.content.startswith('sup dude'):
         userID = message.author.id
         await client.send_message(message.channel, '<@%s> sup' % (userID))
 
@@ -49,7 +49,7 @@ async def help(ctx):
     author = ctx.message.author
     embed = discord.Embed(Colour = discord.Colou.green())
     embed.set_author(name = 'Help Commands')
-    embed.add_field(name ='>síay', value ='Returns what the user says.', inline=False)
+    embed.add_field(name ='>say', value ='Returns what the user says.', inline=False)
     embed.add_field(name ='>clear', value ='Deletes certain amount of messages, default amount is 10', inline=False)
     embed.add_field(name ='>join', value ='The bot joins the current voice channel, the user must be in a voice channel to use this comand', inline=False)
     embed.add_field(name ='>leave', value ='The bot leaves the current voice channel.', inline=False)
