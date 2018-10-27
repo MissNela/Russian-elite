@@ -69,7 +69,7 @@ async def questions():
         """
 
 
-        colour=d
+
        
 )
     await client.say(embed=embed)
