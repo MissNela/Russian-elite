@@ -46,7 +46,7 @@ async def on_member_join(member):
 @client.command(pass_context =True)
 async def help(ctx):
     author = ctx.message.author
-    embed = discord.Embed(Color = discord.Color.green())
+  embedm = discord.Embed(
     embed.set_author(name = 'Help Commands')
     embed.add_field(name ='>say', value ='Returns what the user says.', inline=False)
     embed.add_field(name ='>clear', value ='Deletes certain amount of messages, default amount is 10', inline=False)
@@ -57,6 +57,8 @@ async def help(ctx):
     embed.add_field(name ='Sup dude', value =' says sup XD', inline=False)
     embed.add_field(name ='Ping', value =' Pong!', inline=False)
 
+    color = discord.Color.yellow()
+    )
     await client.send_message(author, embed=embed)
     
 @client.command()
