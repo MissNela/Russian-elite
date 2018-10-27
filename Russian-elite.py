@@ -40,7 +40,7 @@ async def on_member_join(member):
     await client.add_roles(member, role)
 
 
-        await client.send_message(message.channel, '<@%s> :ping_pong: **__Pong!__**' % (userID))
+
 
 
 @client.command(pass_context =True)
