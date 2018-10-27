@@ -45,10 +45,10 @@ async def on_member_join(member):
 
 @client.command(pass_context =True)
 async def help(ctx):
-
+embed = discord.Embed(colour = discord.Colour.orange())
 
     author = ctx.message.author
- embed = discord.Embed(colour = discord.Colour.green())
+
     embed.set_author(name = 'Help Commands')
     embed.add_field(name ='>say', value ='Returns what the user says.', inline=False)
     embed.add_field(name ='>clear', value ='Clears a amount of messages defauld 2.', inline=False)
