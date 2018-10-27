@@ -168,9 +168,13 @@ async def on_message(message):
 async def sup_dude():
     embed = discord.Embed(
     title = ''
+   
     description = "Sup bro."
+    
     colour = discord.Colour.purple()
+    
     )
+    
     await client.say(embed=embed)
         
 @client.command()
