@@ -69,7 +69,7 @@ async def questions():
         """
 
 
-        colour = discord.Colour.green()
+        colour=discord.Colour.green()
        
 )
     await client.say(embed=embed)
