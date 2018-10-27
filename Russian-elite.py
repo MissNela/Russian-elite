@@ -43,26 +43,6 @@ async def on_member_join(member):
 
 
 
-@client.command(pass_context =True)
-async def help(ctx):
-embed = discord.Embed(colour = discord.Colour.orange())
-
-    author = ctx.message.author
-
-    embed.set_author(name = 'Help Commands')
-    embed.add_field(name ='>say', value ='Returns what the user says.', inline=False)
-    embed.add_field(name ='>clear', value ='Clears a amount of messages defauld 2.', inline=False)
-    embed.add_field(name ='>join', value ='The bot joins the current voice channel, the user must be in a voice channel to use this comand', inline=False)
-    embed.add_field(name ='>leave', value ='The bot leaves the current voice channel.', inline=False)
-    embed.add_field(name ='>play', value ='Plays the audio from a youtube url', inline=False)
-    embed.add_field(name ='>serverinfo', value ='Gives the server information on the selected user', inline=False)
-    embed.add_field(name ='Sup dude', value =' says sup XD', inline=False)
-    embed.add_field(name ='Ping', value =' Pong!', inline=False)
-    embed.add_field(name ='More Comming Soon!', value =' Stay turned!', inline=False)
-
-
-
-    await client.send_message(author, embed=embed)
     
 @client.command()
 async def questions():
