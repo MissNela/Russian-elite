@@ -56,14 +56,16 @@ async def help(ctx):
     embed.add_field(name ='>play', value ='Plays the audio from a youtube url', inline=False)
     embed.add_field(name ='>serverinfo', value ='Gives the server information on the selected user', inline=False)
     embed.add_field(name ='Sup dude', value =' says sup XD', inline=False)
-    embed.ass_field(name ='Ping', value =' Pong!', inline=False)
+    embed.add_field(name ='Ping', value =' Pong!', inline=False)
 
     await client.send_message(author, embed=embed)
     
 @client.command(pass_context = True)
 async def echo(ctx, *,msg):
+    embed = discord.Embed(title="Test Announcement", color=green)
+    embed.add_field("{}".format(ctx.message.author.name), value=msg)
     await client.delete_message(ctx.message)
-    await client.say(msg)
+    await client.say(embed=embed)
 
 
 @client.command(pass_context = True)
