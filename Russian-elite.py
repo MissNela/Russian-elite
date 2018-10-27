@@ -4,7 +4,7 @@ from discord.ext.commands import bot
 import asyncio
 from itertools import cycle
 import time
-import youtube_dl
+
 
 my_token = 'NTAzMzgxMDM5ODcyMjEyOTky.Dq2JtA.b6b4lSkwcV9_-e8p1wFyH8nZwtE'
 
