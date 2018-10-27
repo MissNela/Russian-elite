@@ -167,9 +167,9 @@ async def on_message(message):
 @client.event
 async def sup_dude():
     embed = discord.Embed(
-    title = ''
+    title = 'Sup how are ya?'
    
-    description = "Sup bro."
+    description = "Sup bro I know Im annoying xD."
     
     colour = discord.Colour.purple()
     
