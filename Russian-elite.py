@@ -164,7 +164,7 @@ async def on_message(message):
         userID = message.author.id
         await client.send_message(message.channel, '<@%s> :ping_pong: **__Pong!__**' % (userID))
         
-@client.event
+@client.command()
 async def sup_dude():
     embed = discord.Embed(
     title = 'Sup how are ya?'
