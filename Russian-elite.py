@@ -68,7 +68,7 @@ async def questions():
         Question Meant For:',
         """
 
-
+        color = discord.Color.purple()
 
        
 )
@@ -164,18 +164,18 @@ async def on_message(message):
         userID = message.author.id
         await client.send_message(message.channel, '<@%s> :ping_pong: **__Pong!__**' % (userID))
         
-@client.command()
-async def sup_dude():
-    embed = discord.Embed(
-    title = 'Sup how are ya?'
+
+
+
+
    
-    description = "Sup bro I know Im annoying xD."
+
     
-    colour = discord.Colour.purple()
+
     
-    )
+
     
-    await client.say(embed=embed)
+
         
 @client.command()
 async def gamer():
