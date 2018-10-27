@@ -51,7 +51,7 @@ async def help(ctx):
         
     embed.set_author(name = 'Help Commands')
     embed.add_field(name ='>say', value ='Returns what the user says.', inline=False)
-    embed.add_field(name
+    embed.add_field(name ='>clear', value ='Clears a amount of messages defauld 2.', inline=False)
     embed.add_field(name ='>join', value ='The bot joins the current voice channel, the user must be in a voice channel to use this comand', inline=False)
     embed.add_field(name ='>leave', value ='The bot leaves the current voice channel.', inline=False)
     embed.add_field(name ='>play', value ='Plays the audio from a youtube url', inline=False)
