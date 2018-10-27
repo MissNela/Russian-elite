@@ -62,7 +62,7 @@ async def help(ctx):
     
 @client.command(pass_context = True)
 async def echo(ctx, *,msg):
-    embed = discord.Embed(title="Test Announcement", color=green)
+    embed = discord.Embed(title="Test Announcement", color=0xA0d65f)
     embed.add_field("{}".format(ctx.message.author.name), value=msg)
     await client.delete_message(ctx.message)
     await client.say(embed=embed)
