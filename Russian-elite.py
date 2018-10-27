@@ -62,6 +62,7 @@ async def help(ctx):
     
 @client.command(pass_context = True)
 async def echo(ctx, *,msg):
+    await client.delete_message(ctx.message)
     await client.say(msg)
 
 
