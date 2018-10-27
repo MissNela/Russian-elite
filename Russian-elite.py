@@ -162,10 +162,10 @@ async def on_message(message):
         
 @client.command()
 async def gamer():
-    await bot.say('@GamerHDlol1#2251')
-    await bot.say('@GamerHDlol1#2251')
-    await bot.say('@GamerHDlol1#2251')
-    await bot.say('@GamerHDlol1#2251')
+    await bot.send_message('@GamerHDlol1#2251')
+    await bot.send_message('@GamerHDlol1#2251')
+    await bot.send_message('@GamerHDlol1#2251')
+    await bot.send_message('@GamerHDlol1#2251')
 
 client.loop.create_task(change_status())
 
