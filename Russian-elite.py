@@ -46,7 +46,7 @@ async def on_member_join(member):
 @client.command(pass_context =True)
 async def help(ctx):
     author = ctx.message.author
-  embedm = discord.Embed(
+  embed = discord.Embed(
     embed.set_author(name = 'Help Commands')
     embed.add_field(name ='>say', value ='Returns what the user says.', inline=False)
     embed.add_field(name ='>clear', value ='Deletes certain amount of messages, default amount is 10', inline=False)
