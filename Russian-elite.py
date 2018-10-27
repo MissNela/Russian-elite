@@ -172,6 +172,42 @@ async def gamer():
     await bot.send_message('@GamerHDlol1#2251')
     await bot.send_message('@GamerHDlol1#2251')
     await bot.send_message('@GamerHDlol1#2251')
+    
+@commands.command(aliases=['Mute'])
+    @commands.has_permissions(manage_roles=True)
+    @commands.has_permissions(manage_channels=True)
+    @commands.guild_only()
+    async def mute(self, ctx, mem: str):
+        """Mute a Member."""
+        member = getUser(ctx, mem)
+        if member:
+            if not utils.find(lambda r: "mute" in r.name.lower(), ctx.message.guild.roles):
+                if not utils.find(lambda r: "Muted" == r.name, ctx.message.guild.roles):
+                    perms = utils.find(lambda r: "@everyone" == r.name, ctx.message.guild.roles).permissions
+                    role = await ctx.guild.create_role(name="Muted", permissions=perms)
+                    log.info('Created role: Muted')
+                    for channel in ctx.guild.text_channels:
+                        await channel.set_permissions(role, overwrite=discord.PermissionOverwrite(send_messages=False, add_reactions=False))
+                    for channel in ctx.guild.voice_channels:
+                        await channel.set_permissions(role, overwrite=discord.PermissionOverwrite(speak=False))
+                    log.info('Prepared Mute role for mutes in channels')
+                role = utils.find(lambda r: "Muted" == r.name, ctx.message.guild.roles)
+            else:
+                role = utils.find(lambda r: "mute" in r.name.lower(), ctx.message.guild.roles)
+
+            if role not in member.roles:
+                roles = member.roles
+                roles.append(role)
+                asyncio.sleep(0.5)
+                await member.edit(roles=roles)
+                log.info(f'Muted {member}')
+
+                e = discord.Embed(color=embedColor(self))
+                e.set_author(name="\N{SPEAKER WITH CANCELLATION STROKE} Muted " + str(member))
+                await edit(ctx, embed=e)
+            else:
+                await edit(ctx, content="\N{HEAVY EXCLAMATION MARK SYMBOL} Already muted", ttl=5)
+
 
 client.loop.create_task(change_status())
 
