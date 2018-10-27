@@ -165,7 +165,7 @@ async def on_message(message):
         await client.send_message(message.channel, '<@%s> :ping_pong: **__Pong!__**' % (userID))
         
 @client.event
-async def sup dude():
+async def sup_dude():
     embed = discord.Embed(
     title = ''
     description = "Sup bro."
