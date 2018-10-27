@@ -24,14 +24,32 @@ async def change_status():
         current_status = next(msgs)
         await client.change_presence(game=discord.Game(name =current_status))
         await asyncio.sleep(60)
-
+    
 @client.event
 async def on_ready():
-    print('The bot is online and is connected to discord')
+    print('The bot is online and connected with Discord.')
+
+@client.command(pass_context = True)
+async def help(ctx):
+    author = ctx.message.author
+    r, g, b = tuple(int(x * 255) for x in colorsys.hsv_to_rgb(random.random(), 1, 1))
+    embed = discord.Embed(color = discord.Color((r << 34) + (g << 99) + (b << 50)))
+    embed.set_author(name='Help')
+    embed.set_image(url = 'https://image.ibb.co/caM2BK/help.gif')
+    embed.add_field(name = '>questions', value = 'Use in commands only. Also it shows what is format in #questions', inline = False)
+    embed.add_field(name = '>clear', value = 'Moderators only! (Defaultly on 10)', inline = False)
+    embed.add_field(name = '>say', value = 'Let bot to say something', inline = False)
+    embed.add_field(name = 'Ping', value = 'Pong!', inline = False)
+    await client.send_message(author,embed=embed)
+    await client.say('📨 Check DMs For Information')
+        
+
     
 @client.event
 async def on_member_join(member):
     await client.send_message(member, "Welcome to Communism Age! read #rules and #docs!")
+    
+    
 
 
 @client.event
@@ -84,7 +102,7 @@ async def join(ctx):
     embed.add_field(name = '>pause', value = 'pauses audio', inline = False)
     embed.add_field(name = '>resume', value = 'resumes audio', inline = False)
     embed.add_field(name = '>leave', value = 'leave voice channel', inline = False)
-
+    
     await client.say(embed=embed)
     await client.join_voice_channel(channel)
 
