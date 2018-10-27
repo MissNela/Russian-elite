@@ -65,7 +65,7 @@ async def questions():
     embed = discord.Embed(
         title = 'Questions Format:',
         description = 'Username:   Question:    Question Meant For:',
-        description = 'Question:',
+
 
         colour = discord.Colour.green()
        
