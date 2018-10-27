@@ -35,7 +35,7 @@ async def help(ctx):
    
     embed = discord.Embed(color = discord.Color.orange()
 
-    embed.set_image(url = 'https://image.ibb.co/caM2BK/help.gif')
+    
     embed.add_field(name = '>questions', value = 'Use in commands only. Also it shows what is format in #questions', inline = False)
     embed.add_field(name = '>clear', value = 'Moderators only! (Defaultly on 10)', inline = False)
     embed.add_field(name = '>say', value = 'Let bot to say something', inline = False)
