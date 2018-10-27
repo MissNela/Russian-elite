@@ -45,7 +45,7 @@ async def on_member_join(member):
 
 @client.command(pass_context =True)
 async def help(ctx):
-    embed = discord.Embed(
+    embed = discord.Embed(colour = discord.Colour.yellow)
 
     author = ctx.message.author
         
@@ -60,8 +60,8 @@ async def help(ctx):
     embed.add_field(name ='Ping', value =' Pong!', inline=False)
     embed.add_field(name ='More Comming Soon!', value =' Stay turned!', inline=False)
 
-    color = discord.Color.yellow()
-    )
+
+
     await client.send_message(author, embed=embed)
     
 @client.command()
