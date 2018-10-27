@@ -143,5 +143,5 @@ async def serverinfo(ctx, user: discord.Member):
 
 client.loop.create_task(change_status())
 
-
+client.run(my_token)
 
