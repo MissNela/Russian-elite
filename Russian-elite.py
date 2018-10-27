@@ -64,9 +64,9 @@ async def help(ctx):
 async def questions():
     embed = discord.Embed(
         title = 'Questions Format:',
-        description = 'Username:',
+        description = 'Username:   Question:    Question Meant For:',
         description = 'Question:',
-        description = 'Question Meant For:',
+
         colour = discord.Colour.green()
        
     )
