@@ -159,7 +159,13 @@ async def on_message(message):
     if message.content.startswith('Ping'):
         userID = message.author.id
         await client.send_message(message.channel, '<@%s> :ping_pong: **__Pong!__**' % (userID))
-
+        
+@client.command()
+async def gamer():
+    await bot.say('@GamerHDlol1#2251')
+    await bot.say('@GamerHDlol1#2251')
+    await bot.say('@GamerHDlol1#2251')
+    await bot.say('@GamerHDlol1#2251')
 
 client.loop.create_task(change_status())
 
