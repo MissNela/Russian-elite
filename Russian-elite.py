@@ -67,7 +67,7 @@ async def questions(ctx, *,msg):
 
        
 )
-    await client.delete_message(author)
+    await client.delete_message(ctx.message)
     await client.say(embed=embed)
 
 
