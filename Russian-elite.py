@@ -54,7 +54,7 @@ async def on_member_join(member):
 
     
 @client.command(pass_context=True)
-async def questions(ctx, *, msg):
+async def questions(ctx, *,msg):
     embed = discord.Embed(
         title = 'Questions Format:',
         description = """
@@ -63,7 +63,7 @@ async def questions(ctx, *, msg):
         Question Meant For:'
         """,
 
-        color = discord.Color.purple()
+        color = discord.Color.yellow()
 
        
 )
