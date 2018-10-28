@@ -10,7 +10,7 @@ my_token = 'NTAzMzgxMDM5ODcyMjEyOTky.Dq2JtA.b6b4lSkwcV9_-e8p1wFyH8nZwtE'
 
 client = commands.Bot(command_prefix = '>')
 
-client.remove_command('help')
+
 status = ['>help for commands', 'With code', "Stabbing Mrs.Nela","With developer Mrs.Nela"]
 
 players = {}
@@ -29,19 +29,10 @@ async def change_status():
 async def on_ready():
     print('The bot is online and connected with Discord.')
 
-@client.command(pass_context = True)
-async def help(ctx):
-    author = ctx.message.author
-   
-    embed = discord.Embed(color = discord.Color.orange()
+
 
     
-    embed.add_field(name = '>questions', value = 'Use in commands only. Also it shows what is format in #questions', inline = False)
-    embed.add_field(name = '>clear', value = 'Moderators only! (Defaultly on 10)', inline = False)
-    embed.add_field(name = '>say', value = 'Let bot to say something', inline = False)
-    embed.add_field(name = 'Ping', value = 'Pong!', inline = False)
-    await client.send_message(author,embed=embed)
-    await client.say('📨 Check DMs For Information')
+
         
 
     
