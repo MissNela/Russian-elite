@@ -63,7 +63,7 @@ async def questions():
         Question Meant For:'
         """,
 
-        color = discord.Color.yellow()
+        color = discord.Color.brown()
 
        
 )
