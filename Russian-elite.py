@@ -54,7 +54,7 @@ async def on_member_join(member):
 
     
 @client.command(pass_context=True)
-async def questions(ctx, *,msg):
+async def questions():
     embed = discord.Embed(
         title = 'Questions Format:',
         description = """
