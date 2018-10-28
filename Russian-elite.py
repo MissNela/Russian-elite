@@ -66,6 +66,7 @@ async def questions():
 
        
 )
+    await client.delete_message(author)
     await client.say(embed=embed)
 
 
