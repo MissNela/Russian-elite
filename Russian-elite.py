@@ -59,8 +59,8 @@ async def questions():
         title = 'Questions Format:',
         description = """
         Username:  
-        Question:    
-        Question Meant For:'
+     Question:    
+     Question Meant For:
         """,
 
         color = discord.Color.green()
