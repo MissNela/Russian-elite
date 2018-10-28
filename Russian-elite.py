@@ -53,11 +53,12 @@ async def on_member_join(member):
 
 
     
-@client.command()
-async def questions():
+@client.command(pass_context=True)
+async def questions(ctx, *, msg):
     embed = discord.Embed(
         title = 'Questions Format:',
-        description = """Username:  
+        description = """
+        Username:  
         Question:    
         Question Meant For:'
         """,
