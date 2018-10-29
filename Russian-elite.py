@@ -36,15 +36,15 @@ async def on_ready():
 async def help():
     embed = discord.Embed(
     title = "Help",
-    name = "Ping", value = "Bot will reply with Pong!", inline=False
-    name = ">questions", value = "Shows format for questions", inline=False
-    name = ">clear", value = "Clears some amount of messages. Default = 10", inline=False
-    name = ">join", value = "Joins a voice channel (Not working)", inline=False
-    name = ">play", value = "Plays a music (Not working)", inline=False
-    name = ">pause", value = "Pauses a music (Not working)", inline=False
-    name = ">leave", value = "Leaves a Voice channel (Not working)", inline=False
-    name = ">resume", value = "Resumes a music (Not working)", inline=False
-    name = ">say", value = ">say [Message]", inline=False
+    embed.add_field = "Ping", value = "Bot will reply with Pong!", inline=False
+    embed.add_field = ">questions", value = "Shows format for questions", inline=False
+    embed.add_field = ">clear", value = "Clears some amount of messages. Default = 10", inline=False
+    embed.add_field = ">join", value = "Joins a voice channel (Not working)", inline=False
+    embed.add_field = ">play", value = "Plays a music (Not working)", inline=False
+    embed.add_field = ">pause", value = "Pauses a music (Not working)", inline=False
+    embed.add_field = ">leave", value = "Leaves a Voice channel (Not working)", inline=False
+    embed.add_field = ">resume", value = "Resumes a music (Not working)", inline=False
+    embed.add_field = ">say", value = ">say [Message]", inline=False
     
         color = discord.Color.orange()
     )
