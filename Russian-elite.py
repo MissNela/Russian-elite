@@ -166,8 +166,8 @@ async def on_message(message):
 @client.event
 async def on_message(message):
     await client.process_commands(message)
-    if message.content.startswith('Bang Bang!')
-    await client.send_message(message.channel, 'x_x _Dying_. why did you shot me? x_x')
+    if message.content.startswith('Bang Bang!'):
+        await client.send_message(message.channel, 'x_x _Dying_. why did you shot me? x_x')
 
 
 
