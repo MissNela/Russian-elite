@@ -32,23 +32,7 @@ async def change_status():
 async def on_ready():
     print('The bot is online and connected with Discord.')
 
-@client.command(pass_context=True)
-async def help():
-    embed = discord.Embed(
-    title = "Help",
-    embed.add_field(name = "Ping", value = "Bot will reply with Pong!", inline=False)
-    embed.add_field(name = ">questions", value = "Shows format for questions", inline=False)
-    embed.add_field(name = ">clear", value = "Clears some amount of messages. Default = 10", inline=False)
-    embed.add_field(name = ">join", value = "Joins a voice channel (Not working)", inline=False)
-    embed.add_field(name = ">play", value = "Plays a music (Not working)", inline=False)
-    embed.add_field(name = ">pause", value = "Pauses a music (Not working)", inline=False)
-    embed.add_field(name = ">leave", value = "Leaves a Voice channel (Not working)", inline=False)
-    embed.add_field(name = ">resume", value = "Resumes a music (Not working)", inline=False)
-    embed.add_field(name = ">say", value = ">say [Message]", inline=False)
-    
-        color = discord.Color.orange()
-    )
-       await client.say(embed=embed)
+
 
     
 
