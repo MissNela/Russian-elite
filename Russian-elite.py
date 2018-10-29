@@ -170,7 +170,7 @@ async def on_message(message):
         await client.send_message(message.channel, 'x_x _Dying_. why did you shot me? x_x')
 
 @client.command()
-async def kick(ctx, member: discord.member=None):
+async def kick(ctx, member=discord.Member=None):
     if not member:
         await client.say("Please specify a member")
         return
@@ -178,15 +178,30 @@ async def kick(ctx, member: discord.member=None):
     await ctx.say("{member.mention} has been kicked!")
     
 @client.command()
-async def ban(ctx, member: discord.member=None):
+async def ban(ctx, member=discord.Member=None):
     if not member:
         await client.say("Please specify a member")
         return
     await member.ban()
     await ctx.say("{member.mention} has been Banned!")
    
-
+@client.command()
+async def mute(ctx, member=discord.Member=None):
+    role = discord.until.get(ctx.guild.roles, name="Muted")
+    if not member:
+        await ctx.say("Please specify a Member.")
+        return
+    await member.add_roles(role)
+    await ctx.say("Member muted")
     
+client.command()
+async def unmute(ctx, member=discord.Member=None):
+    role = discord.until.get(ctx.guild.roles, name="Muted")
+    if not member:
+        await ctx.say("Please specify a Member.")
+        return
+    await member.remove_roles(role)
+    await ctx.say("Member unmuted")
 
     
 
