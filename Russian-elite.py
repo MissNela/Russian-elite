@@ -169,8 +169,21 @@ async def on_message(message):
     if message.content.startswith('Bang Bang!'):
         await client.send_message(message.channel, 'x_x _Dying_. why did you shot me? x_x')
 
-
-
+@client.command()
+async def kick(ctx, member: discord.member=None):
+    if not member:
+        await client.say("Please specify a member")
+        return
+    await member.kick()
+    await ctx.say("{member.mention} has been kicked!")
+    
+@client.command()
+async def ban(ctx, member: discord.member=None):
+    if not member:
+        await client.say("Please specify a member")
+        return
+    await member.ban()
+    await ctx.say("{member.mention} has been Banned!")
    
 
     
