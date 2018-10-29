@@ -1,12 +1,15 @@
 import discord
 from discord.ext import commands
 from discord.ext.commands import bot
+
 import asyncio
 from itertools import cycle
 import time
 
 
 my_token = 'NTAzMzgxMDM5ODcyMjEyOTky.Dq2JtA.b6b4lSkwcV9_-e8p1wFyH8nZwtE'
+
+client.remove_command("help")
 
 client = commands.Bot(command_prefix = '>')
 
@@ -29,7 +32,23 @@ async def change_status():
 async def on_ready():
     print('The bot is online and connected with Discord.')
 
-
+@client.command(pass_context=True)
+async def help():
+    embed = discord.Embed(
+    title = "Help",
+    name = "Ping", value = "Bot will reply with Pong!", inline=False
+    name = ">questions", value = "Shows format for questions", inline=False
+    name = ">clear", value = "Clears some amount of messages. Default = 10", inline=False
+    name = ">join", value = "Joins a voice channel (Not working)", inline=False
+    name = ">play", value = "Plays a music (Not working)", inline=False
+    name = ">pause", value = "Pauses a music (Not working)", inline=False
+    name = ">leave", value = "Leaves a Voice channel (Not working)", inline=False
+    name = ">resume", value = "Resumes a music (Not working)", inline=False
+    name = ">say", value = ">say [Message]", inline=False
+    
+        color = discord.Color.orange()
+    )
+       await client.say(embed=embed)
 
     
 
