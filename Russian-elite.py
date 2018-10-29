@@ -79,9 +79,10 @@ async def botsugformat():
     embed = discord.Embed(
         title = 'Bot suggestions Format:',
         description = """
-     Username:  
-     Question:    
-     Question Meant For:
+     Username: (Your username)
+     Rank: (Higest rank)
+     Suggestion: (Your suggestion)
+
         """,
 
         color = discord.Color.orange()
@@ -91,6 +92,24 @@ async def botsugformat():
     
     await client.say(embed=embed)
     
+
+@client.command(pass_context=True)
+async def serversuggestions():
+    embed = discord.Embed(
+        title = 'Server Suggestions Format:',
+        description = """
+        Username:(Discord username)
+     Rank: (Your higest rank)
+     Suggestion: (Your server suggestion)
+     How could it help: (How could this help)
+        """,
+
+        color = discord.Color.blue()
+
+       
+)
+    
+    await client.say(embed=embed)
 
 @client.command(pass_context = True)
 async def clear(ctx, amount = 10):
