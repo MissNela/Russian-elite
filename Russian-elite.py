@@ -61,7 +61,7 @@ async def questions():
     embed = discord.Embed(
         title = 'Questions Format:',
         description = """
-        Username:  
+     Username:  
      Question:    
      Question Meant For:
         """,
@@ -74,6 +74,23 @@ async def questions():
     await client.say(embed=embed)
 
 
+@client.command(pass_context=True)
+async def botsugformat():
+    embed = discord.Embed(
+        title = 'Bot suggestions Format:',
+        description = """
+     Username:  
+     Question:    
+     Question Meant For:
+        """,
+
+        color = discord.Color.orange()
+
+       
+)
+    
+    await client.say(embed=embed)
+    
 
 @client.command(pass_context = True)
 async def clear(ctx, amount = 10):
