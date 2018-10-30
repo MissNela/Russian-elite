@@ -56,7 +56,7 @@ async def help():
     embed = discord.Embed(
         title = "Help",
         description = """
-        >questions - shows Questions format
+        **>questions - shows Questions format
         >botsugformat - Shows bot suggestions format
         >serversuggestions - Shows Server suggestions format
         >clear - Cleares A amount of messages (Default = 10)
@@ -77,7 +77,7 @@ async def help():
         >kick - Kicks a user!
         >ban - Bans a User!
         >mute - Mutes a user!
-        >unmute - Unmutes a user!
+        >unmute - Unmutes a user!**
         """,
         
         color = discord.Color.red()
@@ -216,13 +216,17 @@ async def say(*args):
 
 @client.command(pass_context=True)
 async def menberinfo(ctx, user=discord.Member):
-    embed = discord.Embed(title="{}'s info".format(user.name), description="Here's what I could find.", color=0x00ff00)
-    embed.add_field(name="Name", value=user.name, inline=True)
-    embed.add_field(name="ID", value=user.id, inline=True)
-    embed.add_field(name="Status", value=user.status, inline=True)
-    embed.add_field(name="Highest role", value=user.top_role)
-    embed.add_field(name="Joined", value=user.joined_at)
+    embed = discord.Embed(
+        title="{}'s info".format(user.name),
+        description = "here is what I could find"
+    embed.add_field(name="Name", value = user.name, inline=True)
+    embed.add_field(name="ID", value = user.id, inline=True)
+    embed.add_field(name="Status", value = user.status, inline=True)
+    embed.add_field(name="Highest role", value = user.top_role)
+    embed.add_field(name="Joined", value = user.joined_at)
     embed.set_thumbnail(url=user.avatar_url)
+    color = discord.Color.green()
+)
     await client.say(embed=embed)
     
 @client.event
