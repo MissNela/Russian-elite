@@ -223,20 +223,22 @@ async def on_message(message):
         await client.send_message(message.channel, 'x_x _Dying_. why did you shot me? x_x')
 
 @client.command()
-async def kick(ctx, member: discord.Member=None):
-    if not member:
-        await client.say("Please specify a member")
-        return
-    await member.kick()
-    await ctx.say("{member.mention} has been kicked!")
+@commands.has_permissions(kick_members=True)
+async def kick(ctx, userName: discord.User):
+    
+  
+      
+    await bot.kick(userName)
+    await bot.say("{member.mention} has been kicked!")
     
 @client.command()
-async def ban(ctx, member: discord.Member=None):
-    if not member:
-        await client.say("Please specify a member")
-        return
-    await member.ban()
-    await ctx.say("{member.mention} has been Banned!")
+@commands.has_permissions(ban_members:True)
+async def ban(ctx, userName: discord.User):
+   
+        
+        
+    await bot.ban(userName)
+    await bot.say("{member.mention} has been Banned!")
    
 @client.command()
 async def mute(ctx, member: discord.Member=None):
