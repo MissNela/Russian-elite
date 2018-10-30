@@ -296,7 +296,7 @@ async def gamer():
 
 
 
-client.loop.create_task(change_status())
+
 
 client.run(my_token)
 
