@@ -69,7 +69,7 @@ async def help():
         >stop - Stops playing music!
         __FUN (some are not done)__
         >say - Make bot something to say!
-        >memberinfo - Not done
+        >command_idea_here
         Ping - Bt will say somethig!
         Bang Bang! - Bot will say something!
         >serverinfo - get Info about our server!
