@@ -49,8 +49,7 @@ async def on_member_join(member):
     
 
 
-@client.event
-    await client.add_roles(member, role)
+
 
 @client.command(pass_context=True)
 async def help():
