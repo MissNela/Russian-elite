@@ -82,7 +82,7 @@ async def help():
         
         color = discord.Color.red()
 )
-     await client.say(embed=embed)
+    await client.say(embed=embed)
         
         
 
