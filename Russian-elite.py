@@ -27,7 +27,7 @@ async def change_status():
     msgs = cycle(status)
 
     while not client.is_closed:
-        current_status = next(msgs)
+        current_status = next(msgs
         await client.change_presence(game=discord.Game(name =current_status))
         await asyncio.sleep(60)
     
@@ -219,9 +219,9 @@ async def menberinfo(ctx, user=discord.Member):
     embed = discord.Embed(
         title="{}'s info".format(user.name),
         description = "here is what I could find"
-    embed.add_field(name="Name", value = user.name, inline=True)
-    embed.add_field(name="ID", value = user.id, inline=True)
-    embed.add_field(name="Status", value = user.status, inline=True)
+    embed.add_field(name="Name", value = user.name, inline = True)
+    embed.add_field(name="ID", value = user.id, inline = True)
+    embed.add_field(name="Status", value = user.status, inline = True)
     embed.add_field(name="Highest role", value = user.top_role)
     embed.add_field(name="Joined", value = user.joined_at)
     embed.set_thumbnail(url=user.avatar_url)
