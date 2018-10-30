@@ -1,4 +1,5 @@
 import discord
+import youtube_dl
 from discord.ext import commands
 from discord.ext.commands import bot
 
@@ -13,6 +14,8 @@ my_token = 'NTAzMzgxMDM5ODcyMjEyOTky.Dq2JtA.b6b4lSkwcV9_-e8p1wFyH8nZwtE'
 
 client = commands.Bot(command_prefix = '>')
 client.remove_command('help')
+
+players = {}
 
 status = ['>help for commands', 'With code', "Stabbing Mrs.Nela","With developer Mrs.Nela"]
 
@@ -46,9 +49,7 @@ async def on_member_join(member):
     
 
 
-@client.event
-async def on_member_join(member):
-    role = discord.utils.get(member.server.roles, name='USA immigrent')
+@client.eventi immigrent')
     await client.add_roles(member, role)
 
 @client.command(pass_context=True)
@@ -172,7 +173,7 @@ async def join(ctx):
     await client.join_voice_channel(channel)
 
 
-@client.command(pass_context = True)
+@client.command(pass_context=True)
 async def leave(ctx):
     server = ctx.message.server
     voice_client = client.voice_client_in(server)
@@ -180,7 +181,7 @@ async def leave(ctx):
 
 
 
-@client.command(pass_context = True)
+@client.command(pass_context=True)
 async def play(ctx, url):
     server = ctx.message.server
     voice_client = client.voice_client_in(server)
@@ -188,17 +189,17 @@ async def play(ctx, url):
     players[server.id] = player
     player.start()
 
-@client.command(pass_context = True)
+@client.command(pass_context=True)
 async def pause(ctx):
     id = ctx.message.server.id
     players[id].pause()
 
-@client.command(pass_context = True)
+@client.command(pass_context=True)
 async def resume(ctx):
     id = ctx.message.server.id
     players[id].resume()
 
-@client.command(pass_context = True)
+@client.command(pass_context=True)
 async def stop(ctx):
     id = ctx.message.server.id
     players[id].stop()
