@@ -10,7 +10,7 @@ import time
 my_token = 'NTAzMzgxMDM5ODcyMjEyOTky.Dq2JtA.b6b4lSkwcV9_-e8p1wFyH8nZwtE'
 
 
-
+client.remove_command("help)
 client = commands.Bot(command_prefix = '>')
 
 
@@ -51,7 +51,39 @@ async def on_member_join(member):
     role = discord.utils.get(member.server.roles, name='USA immigrent')
     await client.add_roles(member, role)
 
-
+@client.command()
+async def help():
+    embed = discord.Embed(
+        title = "Help"
+        description = """
+        >questions - shows Questions format
+        >botsugformat - Shows bot suggestions format
+        >serversuggestions - Shows Server suggestions format
+        >clear - Cleares A amount of messages (Default = 10)
+        __VOICE (Not done)__
+        >join - Joins a Voice Channel
+        >play - Play something!
+        >pause - Pauses a music
+        >resume - Resumes a Music!
+        >leave - Leaves a Voice Channel!
+        >stop - Stops playing music!
+        __FUN (some are not done)
+        >say - Make bot something to say!
+        >memberinfo - Not done
+        Ping - Bt will say somethig!
+        Bang Bang! - Bot will say something!
+        >serverinfo - get Info about our server!
+        __MODERATION (NOT DONE)__
+        >kick - Kicks a user!
+        >ban - Bans a User!
+        >mute - Mutes a user!
+        >unmute - Unmutes a user!
+        """,
+        color = discord.Color.red()
+)
+     await client.say(embed=embed)
+        
+        
 
 
 
@@ -144,6 +176,7 @@ async def leave(ctx):
     server = ctx.message.server
     voice_client = client.voice_client_in(server)
     await voice_client.disconnect()
+
 
 
 @client.command(pass_context = True)
