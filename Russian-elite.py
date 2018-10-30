@@ -181,7 +181,7 @@ async def say(*args):
 
 
 @client.command(pass_context=True)
-async def serverinfo(ctx, user=discord.Member):
+async def menberinfo(ctx, user=discord.Member):
     embed = discord.Embed(title="{}'s info".format(user.name), description="Here's what I could find.", color=0x00ff00)
     embed.add_field(name="Name", value=user.name, inline=True)
     embed.add_field(name="ID", value=user.id, inline=True)
@@ -230,7 +230,7 @@ async def mute(ctx, member: discord.Member=None):
     await member.add_roles(role)
     await ctx.say("Member muted")
     
-client.command()
+@client.command()
 async def unmute(ctx, member: discord.Member=None):
     role = discord.until.get(ctx.guild.roles, name="Muted")
     if not member:
@@ -239,7 +239,30 @@ async def unmute(ctx, member: discord.Member=None):
     await member.remove_roles(role)
     await ctx.say("Member unmuted")
 
-    
+@client.command()
+async def serverinfo():
+    embed = discord.Embed(
+        embed.add_field(title = "Server Info", inline=False)
+        embed.add_field(name = """This is server info. here you can read about server.
+        Minister (Owner): Mrs.Nela
+        Deputy Minister: Kazuto Kirigaya
+        Deputy Minister: GamerHDlol1
+        ================================
+        SERVER INFO
+        This server is Role Play server. 3 warnings = Mute (@in Gulag)
+        6 warnings is Mute on 24h (@in Gulag)
+        9 warnings is Kick
+        12 warnings = Ban
+        13 warnings = Perma ban
+        currect Bots: 2
+        users: 6
+        I hope you will enjoy your stay!
+        """
+        )
+        await client.say(embed=embed)
+        
+        
+                        
 
     
 
