@@ -242,8 +242,9 @@ async def unmute(ctx, member: discord.Member=None):
 @client.command()
 async def serverinfo():
     embed = discord.Embed(
-        embed.add_field(title = "Server Info", inline=False)
-        embed.add_field(name = """This is server info. here you can read about server.
+        title = "Server Info",
+        description = """
+        This is server info. here you can read about server.
         Minister (Owner): Mrs.Nela
         Deputy Minister: Kazuto Kirigaya
         Deputy Minister: GamerHDlol1
@@ -257,7 +258,8 @@ async def serverinfo():
         currect Bots: 2
         users: 6
         I hope you will enjoy your stay!
-        """
+        """,
+        colour = discord.Colour.green()
         )
         await client.say(embed=embed)
         
