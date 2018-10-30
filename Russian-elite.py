@@ -49,7 +49,7 @@ async def on_member_join(member):
     
 
 
-@client.eventi immigrent')
+@client.event
     await client.add_roles(member, role)
 
 @client.command(pass_context=True)
