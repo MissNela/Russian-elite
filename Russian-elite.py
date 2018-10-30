@@ -260,8 +260,8 @@ async def serverinfo():
         I hope you will enjoy your stay!
         """,
         colour = discord.Colour.green()
-        )
-        await client.say(embed=embed)
+)
+    await client.say(embed=embed)
         
         
                         
