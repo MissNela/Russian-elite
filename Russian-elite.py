@@ -10,9 +10,9 @@ import time
 my_token = 'NTAzMzgxMDM5ODcyMjEyOTky.Dq2JtA.b6b4lSkwcV9_-e8p1wFyH8nZwtE'
 
 
-client.remove_command("help")
-client = commands.Bot(command_prefix = '>')
 
+client = commands.Bot(command_prefix = '>')
+client.remove_command('help')
 
 status = ['>help for commands', 'With code', "Stabbing Mrs.Nela","With developer Mrs.Nela"]
 
