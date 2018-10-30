@@ -51,10 +51,10 @@ async def on_member_join(member):
     role = discord.utils.get(member.server.roles, name='USA immigrent')
     await client.add_roles(member, role)
 
-@client.command()
+@client.command(pass_context=True)
 async def help():
     embed = discord.Embed(
-        title = "Help"
+        title = "Help",
         description = """
         >questions - shows Questions format
         >botsugformat - Shows bot suggestions format
@@ -67,7 +67,7 @@ async def help():
         >resume - Resumes a Music!
         >leave - Leaves a Voice Channel!
         >stop - Stops playing music!
-        __FUN (some are not done)
+        __FUN (some are not done)__
         >say - Make bot something to say!
         >memberinfo - Not done
         Ping - Bt will say somethig!
@@ -79,6 +79,7 @@ async def help():
         >mute - Mutes a user!
         >unmute - Unmutes a user!
         """,
+        
         color = discord.Color.red()
 )
      await client.say(embed=embed)
