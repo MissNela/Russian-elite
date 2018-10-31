@@ -222,41 +222,8 @@ async def on_message(message):
     if message.content.startswith('Bang Bang!'):
         await client.send_message(message.channel, 'x_x _Dying_. why did you shot me? x_x')
 
-@client.command()
-@commands.has_permissions(kick_members=True)
-async def kick(ctx, userName: discord.User):
-    
-  
-      
-    await bot.kick(userName)
-    await bot.say("{member.mention} has been kicked!")
-    
-@client.command()
-@commands.has_permissions(ban_members:True)
-async def ban(ctx, userName: discord.User):
-   
-        
-        
-    await bot.ban(userName)
-    await bot.say("{member.mention} has been Banned!")
-   
-@client.command()
-async def mute(ctx, member: discord.Member=None):
-    role = discord.until.get(ctx.guild.roles, name="Muted")
-    if not member:
-        await ctx.say("Please specify a Member.")
-        return
-    await member.add_roles(role)
-    await ctx.say("Member muted")
-    
-@client.command()
-async def unmute(ctx, member: discord.Member=None):
-    role = discord.until.get(ctx.guild.roles, name="Muted")
-    if not member:
-        await ctx.say("Please specify a Member.")
-        return
-    await member.remove_roles(role)
-    await ctx.say("Member unmuted")
+
+
 
 @client.command()
 async def serverinfo():
