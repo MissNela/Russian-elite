@@ -80,7 +80,7 @@ async def help():
         
 @client.command(pass_context=True)
 async def dhelp():
-    if message.author.id: "342364288310312970"
+   
     embed = discord.Embed(
           title = "Developer Commands",
           description = """**
