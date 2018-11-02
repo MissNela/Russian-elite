@@ -1,3 +1,5 @@
+#Before you hack my bot again I want you to not do this Im a small coder and my bot is not in any other servers than 2.
+
 import discord
 
 from discord.ext import commands
@@ -88,7 +90,7 @@ async def dhelp():
           _No commands has been done yet._
           """,
           
-          color = discord.Color.light_blue()
+          color = discord.Color.dark_blue()
 )
     await client.say(embed=embed)
 
