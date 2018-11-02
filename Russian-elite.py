@@ -89,8 +89,8 @@ async def dhelp():
           """,
           
           color = discord.Color.light_blue()
-      )
-        await client.say(embed=embed)
+)
+    await client.say(embed=embed)
         else:
             await client.say(message.channel, "You are not a Developer!"
 
