@@ -223,7 +223,45 @@ async def say(*args):
         await client.say(output)
 
 
+@bot.command(pass_context=True)  
+@commands.has_permissions(kick_members=True)     
+async def kick(ctx,user:discord.Member):
 
+    if user.server_permissions.kick_members:
+        await bot.say('He/she is mod/admin and i am unable to kick him/her')
+        return
+    
+    try:
+        await bot.kick(user)
+        await bot.say(user.name+' was kicked. Good bye '+user.name+'!')
+        await bot.delete_message(ctx.message)
+
+    except discord.Forbidden:
+        await bot.say('Permission denied.')
+        return
+    
+@bot.command(pass_context=True)  
+@commands.has_permissions(ban_members=True)      
+async def ban(ctx, user:discord.Member):
+
+    if user.server_permissions.ban_members:
+        await bot.say('He/she is mod/admin and i am unable to ban him/her')
+        return
+        
+    if not user:
+        await bot.say("Please specify a user to ban")
+
+    try:
+        await bot.ban(user)
+        await bot.say(user.name+' was banned. Good bye '+user.name+'!')
+
+    except discord.Forbidden:
+        await bot.say('Permission denied. You need ban members permission')
+        return
+
+    except discord.HTTPException:
+        await bot.say('ban failed.')
+        return
     
 @client.event
 async def on_message(message):
