@@ -31,7 +31,12 @@ async def on_ready():
 
 
 
-    
+@bot.command(pass_context=True)
+@commands.has_permissions(kick_members=True)
+async def warn(ctx, userName: discord.User, *, message:str):
+        await bot.send_message(userName, "You have been warned for: {}".format(message)) 
+        await bot.say("warning {0} Has Been Warned! Warning Reason : {1} ".format(userName,message))
+        pass
 
         
 
