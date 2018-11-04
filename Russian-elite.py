@@ -57,7 +57,7 @@ async def help():
         description = """
         **:wrench: ``>helpoverall`` :wrench:
         >clear - Cleares A amount of messages (Default = 10)
-        :loud_sound: >helpvoice :loud_sound:
+        :loud_sound: ``>helpvoice`` :loud_sound:
     
         __FUN (some are not done)__
         >say - Make bot something to say!
@@ -109,7 +109,21 @@ async def helpvoice():
         **
         """,
         color = discord.Color.blue()
-)
+) 
+    await client.say(embed=embed)
+
+@client.command(pass_context=True)
+async def helpvoice():
+    embed = discord.Embed(
+        title = "Fun Commands",
+        description = """
+      **__Here are All commands for Fun. Some may not work.__
+      >say - __Make the bot say something!__
+      ping - __bot will say something ;)
+      Bang Bang! - __You will kill the bot!__
+        """,
+        color = discord.Color.dark_green()
+) 
     await client.say(embed=embed)
         
 @client.command(pass_context=True)
