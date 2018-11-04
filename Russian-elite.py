@@ -57,13 +57,8 @@ async def help():
         description = """
         **:wrench: ``>helpoverall`` :wrench:
         >clear - Cleares A amount of messages (Default = 10)
-        __VOICE (Not done)__
-        >join - Joins a Voice Channel
-        >play - Play something!
-        >pause - Pauses a music
-        >resume - Resumes a Music!
-        >leave - Leaves a Voice Channel!
-        >stop - Stops playing music!
+        :loud_sound: >helpvoice :loud_sound:
+    
         __FUN (some are not done)__
         >say - Make bot something to say!
         >command_idea_here
@@ -95,6 +90,25 @@ async def helpoverall():
         >serversuggetions - __Shows a Server Suggestions format. Use in bot commands.__**
         """,
         color = discord.Color.dark_blue()
+)
+   
+    await client.say(embed=embed)
+    
+@client.command(pass_context=True)
+async def helpvoice():
+    embed = discord.Embed(
+        title = "Voice Commands Not done",
+        description = """
+        ***__THIS COMMANDS ARENT DONE. Here are all Voice/Music Commands!***
+       ** >join - __Joins a Voice channel.__
+        >play - __Play a music!__
+        >pause - __Pause music!__
+        >resume - __Resumes music!__
+        >stop - __Stops a music!__
+        >leave - __Leaves a Voice channel!__
+        **
+        """,
+        color = discord.Color.blue()
 )
     await client.say(embed=embed)
         
