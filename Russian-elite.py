@@ -56,7 +56,7 @@ async def help():
         title = "Help",
         description = """
         **:wrench: ``>helpoverall`` :wrench:
-        >clear - Cleares A amount of messages (Default = 10)
+        >clear - Cleares
         :loud_sound: ``>helpvoice`` :loud_sound:
         :joy: ``>helpfun`` :joy:
      :hammer: ``>helpmoderation`` :hammer:
