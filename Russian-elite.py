@@ -55,9 +55,7 @@ async def help():
     embed = discord.Embed(
         title = "Help",
         description = """
-        **>questions - shows Questions format
-        >botsugformat - Shows bot suggestions format
-        >serversuggestions - Shows Server suggestions format
+        **:wrench: ``>helpoverall`` :wrench:
         >clear - Cleares A amount of messages (Default = 10)
         __VOICE (Not done)__
         >join - Joins a Voice Channel
@@ -84,10 +82,26 @@ async def help():
         color = discord.Color.dark_red()
 )
     await client.say(embed=embed)
+    
+  
+@client.vommanf(pass_context=True)
+async def helpoverall():
+    embed = discord.Embed(
+        title = "Server Commands",
+        description = """
+        **_Here you can see all srrver commands._
+        >questions - __Shows a questions format. Use in bot commands.__
+        >botsugformag - __Shows a bot suggestions format. Use in bot commands.__
+        >serversuggetions - __Shows a Server Suggestions format. Use in bot commands.__**
+        """,
+        color = discord.Color.dark_blue()
+)
+    await client.say(embed=embed)
         
 @client.command(pass_context=True)
 async def dhelp():
-   
+
+
     embed = discord.Embed(
           title = "Developer Commands",
           description = """**
