@@ -56,7 +56,7 @@ async def help():
         title = "Help",
         description = """
         **:wrench: ``>helpoverall`` :wrench:
-        >clear - Cleares
+        
         :loud_sound: ``>helpvoice`` :loud_sound:
         :joy: ``>helpfun`` :joy:
      :hammer: ``>helpmoderation`` :hammer:
