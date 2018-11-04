@@ -59,7 +59,7 @@ async def help():
         >clear - Cleares A amount of messages (Default = 10)
         :loud_sound: ``>helpvoice`` :loud_sound:
         :joy: ``>helpfun`` :joy:
-:hammer: ``>helpmoderation`` :hammer:
+     :hammer: ``>helpmoderation`` :hammer:
         
         __DEVELOPER COMMANDS__
         >dhelp**
@@ -90,7 +90,7 @@ async def helpvoice():
     embed = discord.Embed(
         title = "Voice Commands Not done",
         description = """
-        ***__THIS COMMANDS ARENT DONE. Here are all Voice/Music Commands!***
+        ***__THIS COMMANDS ARENT DONE. Here are all Voice/Music Commands!__***
        ** >join - __Joins a Voice channel.__
         >play - __Play a music!__
         >pause - __Pause music!__
@@ -110,8 +110,8 @@ async def helpfun():
         description = """
       **__Here are All commands for Fun. Some may not work.__
       >say - __Make the bot say something!__
-      ping - __bot will say something ;)
-      Bang Bang! - __You will kill the bot!__
+      ping - __bot will say something ;)__
+      Bang Bang! - __You will kill the bot!__**
         """,
         color = discord.Color.dark_green()
 ) 
@@ -138,12 +138,12 @@ async def helpmoderation():
         title = "Moderation Help",
         description = """
         **__MODERATION HELP THEY ARENT DONE! ONLY CLEAR WORKS__**
-        **>clear - __Clears a selected ammout of messages. Default 10.
-        >warn - __Warns a User. Not done.
-        >ban - __Bans a user. Not done.
-        >kick - __Kicks a user. Not done.
-        >mute - __Mutes a user. Not done.
-        >unmute - __Unmutes a user. Not done.
+        **>clear - __Clears a selected ammout of messages. Default 10.__
+        >warn - __Warns a User. Not done.__
+        >ban - __Bans a user. Not done.__
+        >kick - __Kicks a user. Not done.__
+        >mute - __Mutes a user. Not done.__
+        >unmute - __Unmutes a user. Not done.__
         """,
         color = discord.Color.green()
 )
