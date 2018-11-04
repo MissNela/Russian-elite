@@ -59,12 +59,8 @@ async def help():
         >clear - Cleares A amount of messages (Default = 10)
         :loud_sound: ``>helpvoice`` :loud_sound:
         :joy: ``>helpfun`` :joy:
-
-        __MODERATION (NOT DONE)__
-        >kick - Kicks a user!
-        >ban - Bans a User!
-        >mute - Mutes a user!
-        >unmute - Unmutes a user!
+:hammer: ``>helpmoderation`` :hammer:
+        
         __DEVELOPER COMMANDS__
         >dhelp**
         """,
@@ -136,10 +132,23 @@ async def dhelp():
 )
     await client.say(embed=embed)
 
-
-
-
-    
+@client.command(pass_context=True)
+async def helpmoderation():
+    embed = discord.Embed(
+        title = "Moderation Help",
+        description = """
+        **__MODERATION HELP THEY ARENT DONE! ONLY CLEAR WORKS__**
+        **>clear - __Clears a selected ammout of messages. Default 10.
+        >warn - __Warns a User. Not done.
+        >ban - __Bans a user. Not done.
+        >kick - __Kicks a user. Not done.
+        >mute - __Mutes a user. Not done.
+        >unmute - __Unmutes a user. Not done.
+        """,
+        color = discord.Color.green()
+)
+    await client.say(embed=embed)
+        
 @client.command(pass_context=True)
 async def questions():
     embed = discord.Embed(
