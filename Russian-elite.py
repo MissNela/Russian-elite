@@ -58,13 +58,8 @@ async def help():
         **:wrench: ``>helpoverall`` :wrench:
         >clear - Cleares A amount of messages (Default = 10)
         :loud_sound: ``>helpvoice`` :loud_sound:
-    :joy: ``>helpfun`` :joy:
-        __FUN (some are not done)__
-        >say - Make bot something to say!
-        >command_idea_here
-        Ping - Bt will say somethig!
-        Bang Bang! - Bot will say something!
-        >serverinfo - get Info about our server!
+        :joy: ``>helpfun`` :joy:
+
         __MODERATION (NOT DONE)__
         >kick - Kicks a user!
         >ban - Bans a User!
