@@ -84,7 +84,7 @@ async def help():
     await client.say(embed=embed)
     
   
-@client.vommanf(pass_context=True)
+@client.command(pass_context=True)
 async def helpoverall():
     embed = discord.Embed(
         title = "Server Commands",
