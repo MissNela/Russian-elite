@@ -56,16 +56,16 @@ async def help():
         title = "Help",
         description = """
         **:wrench: ``>helpoverall`` :wrench:
-        
-        :loud_sound: ``>helpvoice`` :loud_sound:
-        :joy: ``>helpfun`` :joy:
-     :hammer: ``>helpmoderation`` :hammer:
+          :loud_sound: ``>helpvoice`` :loud_sound:
+          :joy: ``>helpfun`` :joy:
+          :hammer: ``>helpmoderation`` :hammer:
         
         __DEVELOPER COMMANDS__
         >dhelp**
         """,
         
-        color = discord.Color.dark_red()
+        color = discord.Color.golden_rod()
+       
 )
     await client.say(embed=embed)
     
