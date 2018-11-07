@@ -64,7 +64,7 @@ async def help():
         **``>dhelp``**
         """,
         
-        color = discord.Color.golden_rod()
+        color = discord.Color.salmon()
        
 )
     await client.say(embed=embed)
