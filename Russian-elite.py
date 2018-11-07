@@ -28,7 +28,8 @@ players = {}
 @client.event
 async def on_ready():
     print('The bot is online and connected with Discord.')
-
+    print(bot.user.name)
+         
 
 
 @bot.command(pass_context=True)
@@ -61,12 +62,13 @@ async def help():
           :hammer: ``>helpmoderation`` :hammer:
         
         __```DEVELOPER COMMANDS```__
-        **``>dhelp``**
+        ``>dhelp``**
         """,
         
         color = discord.Color.orange()
        
 )
+    ptint("Help successly made")
     await client.say(embed=embed)
     
   
