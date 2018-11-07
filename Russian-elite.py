@@ -59,7 +59,8 @@ async def help():
     embed = discord.Embed(
         title = "Help",
         description = """
-        **:wrench: ``>helpoverall`` :wrench:
+        **``Here is all what I could find.``
+        :wrench: ``>helpoverall`` :wrench:
           :loud_sound: ``>helpvoice`` :loud_sound:
           :joy: ``>helpfun`` :joy:
           :hammer: ``>helpmoderation`` :hammer:
