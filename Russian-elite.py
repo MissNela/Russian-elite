@@ -28,8 +28,14 @@ players = {}
 @client.event
 async def on_ready():
     print('The bot is online and connected with Discord.')
-    print(bot.user.name)
-         
+
+@client.event
+async def on_message(message):
+    await client.process_commands(message)
+    if message.content.startswith('>help'):
+        await client.send_message(message.channel, "Here is you're ``Help`` type >helpcategory`` for more help.")
+    
+   
 
 
 @bot.command(pass_context=True)
@@ -46,7 +52,9 @@ async def warn(ctx, userName: discord.User, *, message:str):
 async def on_member_join(member):
     await client.send_message(member, "Welcome to Communism Age! read #rules and #docs!")
     
-    
+@client.event
+on_message(message):
+    if content.startswith('>help')
 
 
 
