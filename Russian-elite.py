@@ -60,8 +60,8 @@ async def help():
           :joy: ``>helpfun`` :joy:
           :hammer: ``>helpmoderation`` :hammer:
         
-        __DEVELOPER COMMANDS__
-        >dhelp**
+        __```DEVELOPER COMMANDS```__
+        **``>dhelp``**
         """,
         
         color = discord.Color.golden_rod()
