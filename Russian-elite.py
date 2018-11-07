@@ -71,7 +71,7 @@ async def help():
         color = discord.Color.orange()
        
 )
-    ptint("Help successly made")
+   
     await client.say(embed=embed)
     
   
