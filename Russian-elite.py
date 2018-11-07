@@ -52,11 +52,6 @@ async def warn(ctx, userName: discord.User, *, message:str):
 async def on_member_join(member):
     await client.send_message(member, "Welcome to Communism Age! read #rules and #docs!")
     
-@client.event
-on_message(message):
-    if content.startswith('>help')
-
-
 
 
 @client.command(pass_context=True)
