@@ -10,7 +10,7 @@ from itertools import cycle
 import time
 
 
-my_token = 'NTAzMzgxMDM5ODcyMjEyOTky.DrtSQQ.j8TNVzKT8KAKEVEjlHJQuzVAz_o'
+my_token = TOKEN
 
 
 
