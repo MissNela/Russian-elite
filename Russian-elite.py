@@ -75,6 +75,27 @@ async def warn(ctx, userName: discord.User, *, message:str):
 async def on_member_join(member):
     await client.send_message(member, "Welcome to Communism Age! read #rules and #docs!")
     
+@commands.has_permissions(manage_roles=True)     
+async def role(ctx, user: discord.Member, *, role: discord.Role = None):
+        if role is None:
+            return await client.say("You haven't specified a role! ")
+
+        if role not in user.roles:
+            await client.add_roles(user, role)
+            return await client.say("{} role has been added to {}.".format(role, user))
+
+        if role in user.roles:
+            await client.remove_roles(user, role)
+            return await client.say("{} role has been removed from {}.".format(role, user))
+ 
+@client.command(pass_context = True)
+@commands.has_permissions(kick_members=True)
+async def norole(ctx, *, msg = None):
+    await client.delete_message(ctx.message)
+
+    if not msg: await client.say("Please specify a user to warn")
+    else: await client.say(msg + ', Please Do not ask for promotions check Rules again.')
+    return
 
 
 @client.command(pass_context=True)
@@ -317,18 +338,66 @@ async def say(*args):
 async def kick(ctx,user:discord.Member):
 
     if user.server_permissions.kick_members:
-        await bot.say('He/she is mod/admin and i am unable to kick him/her')
+        await client.say('**He is mod/admin and i am unable to kick him/her**')
         return
     
     try:
-        await bot.kick(user)
-        await bot.say(user.name+' was kicked. Good bye '+user.name+'!')
-        await bot.delete_message(ctx.message)
+        await client.kick(user)
+        await client.say(user.name+' was kicked. Good bye '+user.name+'!')
+        await client.delete_message(ctx.message)
 
     except discord.Forbidden:
-        await bot.say('Permission denied.')
+        await client.say('Permission denied.')
         return
+
     
+@clien@client.command(pass_context=True)  
+@commands.has_permissions(ban_members=True)      
+async def ban(ctx,user:discord.Member):
+
+    if user.server_permissions.ban_members:
+        await client.say('**He is mod/admin and i am unable to ban him/her**')
+        return
+
+    try:
+        await client.ban(user)
+        await client.say(user.name+' was banned. Good bye '+user.name+'!')
+
+    except discord.Forbidden:
+
+        await client.say('Permission denied.')
+        return
+    except discord.HTTPException:
+        await client.say('ban failed.')
+        return		 
+
+
+
+@client.command(pass_context=True)  
+@commands.has_permissions(ban_members=True)     
+
+
+async def unban(ctx):
+    ban_list = await client.get_bans(ctx.message.server)
+
+    # Show banned users
+    await client.say("Ban list:\n{}".format("\n".join([user.name for user in ban_list])))
+
+    # Unban last banned user
+    if not ban_list:
+    	
+        await client.say('Ban list is empty.')
+        return
+    try:
+        await client.unban(ctx.message.server, ban_list[-1])
+        await client.say('Unbanned user: `{}`'.format(ban_list[-1].name))
+    except discord.Forbidden:
+        await client.say('Permission denied.')
+        return
+    except discord.HTTPException:
+        await client.say('unban failed.')
+        return		      	 		 		  
+
 @client.command(pass_context=True)  
 @commands.has_permissions(ban_members=True)      
 async def ban(ctx, user:discord.Member):
