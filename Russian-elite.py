@@ -379,5 +379,5 @@ async def gamer():
 
 
 
-client.run(TOKEN)
+client.run(process.env.BOT_TOKEN)
 
