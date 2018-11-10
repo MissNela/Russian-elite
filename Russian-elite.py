@@ -379,5 +379,5 @@ async def gamer():
 
 
 
-client.run(my_token)
+client.run(TOKEN)
 
