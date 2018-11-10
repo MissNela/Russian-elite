@@ -398,28 +398,7 @@ async def unban(ctx):
         await client.say('unban failed.')
         return		      	 		 		  
 
-@client.command(pass_context=True)  
-@commands.has_permissions(ban_members=True)      
-async def ban(ctx, user:discord.Member):
 
-    if user.server_permissions.ban_members:
-        await bot.say('He/she is mod/admin and i am unable to ban him/her')
-        return
-        
-    if not user:
-        await bot.say("Please specify a user to ban")
-
-    try:
-        await bot.ban(user)
-        await bot.say(user.name+' was banned. Good bye '+user.name+'!')
-
-    except discord.Forbidden:
-        await bot.say('Permission denied. You need ban members permission')
-        return
-
-    except discord.HTTPException:
-        await bot.say('ban failed.')
-        return
     
 @client.event
 async def on_message(message):
