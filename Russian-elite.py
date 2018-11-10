@@ -183,9 +183,14 @@ async def helpoverall():
         title = "Server Commands",
         description = """
         **_Here you can see all srrver commands._
-        >questions - __Shows a questions format. Use in bot commands.__
-        >botsugformag - __Shows a bot suggestions format. Use in bot commands.__
-        >serversuggetions - __Shows a Server Suggestions format. Use in bot commands.__**
+        ``>questions``
+        __Shows a questions format. Use in bot commands.__
+        ``>botsugformag``
+        __Shows a bot suggestions format. Use in bot commands.__
+        ``>serversuggetions``
+        __Shows a Server Suggestions format. Use in bot commands.__
+        ``>userinfo``
+        Gets info about user. Usage: ``>userinfo @user``**
         """,
         color = discord.Color.dark_blue()
 )
@@ -244,13 +249,25 @@ async def helpmoderation():
     embed = discord.Embed(
         title = "Moderation Help",
         description = """
-        **__MODERATION HELP THEY ARENT DONE! ONLY CLEAR WORKS__**
-        **>clear - __Clears a selected ammout of messages. Default 10.__
-        >warn - __Warns a User. Not done.__
-        >ban - __Bans a user. Not done.__
-        >kick - __Kicks a user. Not done.__
-        >mute - __Mutes a user. Not done.__
-        >unmute - __Unmutes a user. Not done.__
+        **__MODERATION__**
+        **``>clear``
+        __Clears a selected ammout of messages. Default 10.__
+        ``>warn``
+        __Warns & DM's a user. Usage: ``>warn @user Reason``.__
+        ``>ban``
+        __Bans a user. Usage: ``>ban @user Reason``.__
+        ``>unban``
+        Shows a list of banned user & unbans the last user. Usage: ``>unban user``
+        ``>kick``
+        __Kicks a user. Usage: ``>kick @user reason``.__
+        ``>mute``
+        __Mutes a user. Not done.__
+        >unmute
+        __Unmutes a user. Not done.__
+        >role
+        Adds/Removes a role from user. Usage: ``>role @user @role``
+        >setnick
+        Sets nick of someone. Usage: ``>setnick @user nick``**
         """,
         color = discord.Color.green()
 )
