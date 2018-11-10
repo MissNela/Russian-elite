@@ -80,7 +80,45 @@ async def help():
    
     await client.say(embed=embed)
     
+@client.command(pass_context = True)
+async def play(ctx, *, url):
+    author = ctx.message.author
+    voice_channel = author.voice_channel
+    try:
+        vc = await client.join_voice_channel(voice_channel)
+        msg = await client.say("Loading...")
+        player = await vc.create_ytdl_player("ytsearch:" + url)
+        player.start()
+        await client.say("Succesfully Loaded ur song!")
+        await client.delete_message(msg)
+    except Exception as e:
+        print(e)
+        await client.say("Reconnecting")
+        for x in client.voice_clients:
+            if(x.server == ctx.message.server):
+                await x.disconnect()
+                nvc = await client.join_voice_channel(voice_channel)
+                msg = await client.say("Loading...")
+                player2 = await nvc.create_ytdl_player("ytsearch:" + url)
+                player2.start()
 
+
+@client.command(pass_context = True)
+async def stop(ctx):
+    for x in client.voice_clients:
+        if(x.server == ctx.message.server):
+            return await x.disconnect()
+
+    return await client.say("I am not playing anyting???!")
+
+@client.command(pass_context=True)
+@commands.has_permissions(kick_members=True)
+async def joinvoice(ctx):
+    author = ctx.message.author
+    channel = author.voice_channel
+    await client.join_voice_channel(channel)
+
+    
 async def on_member_join(member):
     print("In our server" + member.name + " just joined")
     r, g, b = tuple(int(x * 255) for x in colorsys.hsv_to_rgb(random.random(), 1, 1))
@@ -243,54 +281,7 @@ async def clear(ctx, amount = 10):
     await client.say('Messages deleted.')
 
 
-@client.command(pass_context = True)
-async def join(ctx):
-    channel = ctx.message.author.voice.voice_channel
-    embed = discord.Embed(
-        title = 'Voice channel',
-        description = 'commands for the voice channel.',
-        colour = discord.Colour.blue()
-    )
 
-    embed.add_field(name = '>play', value = 'play youtube audio with url', inline = False)
-    embed.add_field(name = '>pause', value = 'pauses audio', inline = False)
-    embed.add_field(name = '>resume', value = 'resumes audio', inline = False)
-    embed.add_field(name = '>leave', value = 'leave voice channel', inline = False)
-    
-    await client.say(embed=embed)
-    await client.join_voice_channel(channel)
-
-
-@client.command(pass_context=True)
-async def leave(ctx):
-    server = ctx.message.server
-    voice_client = client.voice_client_in(server)
-    await voice_client.disconnect()
-
-
-
-@client.command(pass_context=True)
-async def play(ctx, url):
-    server = ctx.message.server
-    voice_client = client.voice_client_in(server)
-    player = await voice_client.create_ytdl_player(url)
-    players[server.id] = player
-    player.start()
-
-@client.command(pass_context=True)
-async def pause(ctx):
-    id = ctx.message.server.id
-    players[id].pause()
-
-@client.command(pass_context=True)
-async def resume(ctx):
-    id = ctx.message.server.id
-    players[id].resume()
-
-@client.command(pass_context=True)
-async def stop(ctx):
-    id = ctx.message.server.id
-    players[id].stop()
 
 
 
