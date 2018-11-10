@@ -43,7 +43,7 @@ async def on_message(message):
    
 
 
-@bot.command(pass_context=True)
+@client.command(pass_context=True)
 @commands.has_permissions(kick_members=True)
 async def warn(ctx, userName: discord.User, *, message:str):
         await bot.send_message(userName, "You have been warned for: {}".format(message)) 
@@ -285,7 +285,7 @@ async def say(*args):
         await client.say(output)
 
 
-@bot.command(pass_context=True)  
+@client.command(pass_context=True)  
 @commands.has_permissions(kick_members=True)     
 async def kick(ctx,user:discord.Member):
 
@@ -302,7 +302,7 @@ async def kick(ctx,user:discord.Member):
         await bot.say('Permission denied.')
         return
     
-@bot.command(pass_context=True)  
+@client.command(pass_context=True)  
 @commands.has_permissions(ban_members=True)      
 async def ban(ctx, user:discord.Member):
 
