@@ -1,13 +1,18 @@
 #Before you hack my bot again I want you to not do this Im a small coder and my bot is not in any other servers than 2.
 
 import discord
-
+from discord.ext.commands import Bot
 from discord.ext import commands
-from discord.ext.commands import bot
-
+from discord.ext.commands.cooldowns import BucketType
 import asyncio
-from itertools import cycle
+import platform
+import colorsys
+import random
+import os
 import time
+from discord.voice_client import VoiceClient
+from discord import Game, Embed, Color, Status, ChannelType
+
 
 
 
@@ -379,5 +384,5 @@ async def gamer():
 
 
 
-client.run(process = BOT_TOKEN)
+client.run(os.getenv("BOT_TOKEN"))
 
