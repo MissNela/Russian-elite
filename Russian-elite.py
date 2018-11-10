@@ -41,6 +41,24 @@ async def on_message(message):
         await client.send_message(message.channel, "Here is you're ``Help`` type >helpcategory`` for more help.")
     
    
+@client.command(pass_context = True)
+@commands.has_permissions(manage_nicknames=True)     
+async def setnick(ctx, user: discord.Member, *, nickname):
+    await client.change_nickname(user, nickname)
+    await client.delete_message(ctx.message)
+
+@client.command(pass_context = True)
+@commands.has_permissions(kick_members=True)     
+async def userinfo(ctx, user: discord.Member):
+    r, g, b = tuple(int(x * 255) for x in colorsys.hsv_to_rgb(random.random(), 1, 1))
+    embed = discord.Embed(title="{}'s info".format(user.name), description="Here's what I could find.", color = discord.Color((r << 16) + (g << 8) + b))
+    embed.add_field(name="Name", value=user.name, inline=True)
+    embed.add_field(name="ID", value=user.id, inline=True)
+    embed.add_field(name="Status", value=user.status, inline=True)
+    embed.add_field(name="Highest role", value=user.top_role)
+    embed.add_field(name="Joined", value=user.joined_at)
+    embed.set_thumbnail(url=user.avatar_url)
+    await client.say(embed=embed)
 
 
 @client.command(pass_context=True)
