@@ -32,7 +32,7 @@ players = {}
 
 @client.event
 async def on_ready():
-    print('The bot is online and connected with Discord.', + bot.username)
+    print("The bot is online and connected with Discord!")
 
 @client.event
 async def on_message(message):
