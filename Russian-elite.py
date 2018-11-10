@@ -75,6 +75,7 @@ async def warn(ctx, userName: discord.User, *, message:str):
 async def on_member_join(member):
     await client.send_message(member, "Welcome to Communism Age! read #rules and #docs!")
     
+@client.command(pass_context = True)
 @commands.has_permissions(manage_roles=True)     
 async def role(ctx, user: discord.Member, *, role: discord.Role = None):
         if role is None:
