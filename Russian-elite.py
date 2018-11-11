@@ -231,13 +231,8 @@ async def dhelp():
 )
 	
         await client.say(embed=embed)
-	
-	
-	
-	
-	
-     else:
-        await client.say(message.channel, "You do not have permission to use this!")
+
+
 	
 	
 	
@@ -344,12 +339,16 @@ async def clear(ctx, amount = 10):
 
 @client.command()
 async def say(*args):
+       if message.author.id == "342364288310312970"
         output = ''
+       
         for word in args:
             output += word
             output += ' '
         await client.say(output)
-
+      else:
+        await client.say(message.channel,"You do not have permission!")
+	
 
 @client.command(pass_context=True)  
 @commands.has_permissions(kick_members=True)     
