@@ -19,7 +19,7 @@ import youtube_dl
 
 
 
-client = commands.Bot(command_prefix = '>','R!','!')
+client = commands.Bot(command_prefix = '>')
 client.remove_command('help')
 
 players = {}
