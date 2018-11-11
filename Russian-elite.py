@@ -451,7 +451,12 @@ async def serverinfo(ctx):
     return await client.say(embed = join);
 
         
-                        
+                   
+@client.event
+async def on_message(message):
+    await client.process_commands(message)
+    if message.content.startswith('Nom'):
+        await client.send_message(message.channel, ':NomNOM:')
 
     
 
