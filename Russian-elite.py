@@ -217,18 +217,32 @@ async def helpfun():
         
 @client.command(pass_context=True)
 async def dhelp():
+    if message.author.id == "342364288310312970":
+	
 
-
-    embed = discord.Embed(
-          title = "Developer Commands",
-          description = """**
+        embed = discord.Embed(
+            title = "Developer Commands",
+            description = """**
           __DEVELOPER EARLY ACCES__
           _No commands has been done yet._
           """,
           
-          color = discord.Color.dark_blue()
+            color = discord.Color.dark_blue()
 )
-    await client.say(embed=embed)
+	
+        await client.say(embed=embed)
+	
+	
+	
+	
+	
+     else:
+        await client.say(message.challen, "You do not have permission to use this!")
+	
+	
+	
+	
+	
 
 @client.command(pass_context=True)
 async def helpmoderation():
