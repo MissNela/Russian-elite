@@ -339,7 +339,7 @@ async def clear(ctx, amount = 10):
 
 @client.command()
 async def say(*args):
-       if message.author.id == "342364288310312970"
+       if message.author.id == "342364288310312970":
         output = ''
        
         for word in args:
