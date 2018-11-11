@@ -22,7 +22,7 @@ import youtube_dl
 client = commands.Bot(command_prefix = '>')
 client.remove_command('help')
 
-players = {}
+
 
 status = ['>help for commands', 'With code', "Stabbing Mrs.Nela","With developer Mrs.Nela"]
 
