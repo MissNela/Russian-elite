@@ -237,7 +237,7 @@ async def dhelp():
 	
 	
      else:
-        await client.say(message.challen, "You do not have permission to use this!")
+        await client.say(message.channel, "You do not have permission to use this!")
 	
 	
 	
