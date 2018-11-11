@@ -346,9 +346,7 @@ async def say(*args):
             output += word
             output += ' '
         await client.say(output)
-      if not message.author.id then
-        await client.say(message.channel,"You do not have permission!")
-	
+      
 
 @client.command(pass_context=True)  
 @commands.has_permissions(kick_members=True)     
