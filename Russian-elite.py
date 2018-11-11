@@ -19,7 +19,7 @@ from discord import Game, Embed, Color, Status, ChannelType
 
 
 
-client = commands.Bot(command_prefix = '>', 'R!', '!')
+client = commands.Bot(command_prefix = '>','R!','!')
 client.remove_command('help')
 
 players = {}
